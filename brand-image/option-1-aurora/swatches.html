@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURORA — Brand Swatches</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0B0E17;
+    color: #EAEDF3;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 4rem 2rem; }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #6B7A99;
+  }
+
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 3rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00E5CC;
+  }
+
+  /* Logo mock */
+  .logo-area {
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #1E293B;
+  }
+
+  .logo-slashes {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00E5CC, #7B61FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -8px;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    color: #6B7A99;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Swatches */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .swatch {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .swatch-color {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.5rem;
+  }
+
+  .swatch-info {
+    padding: 0.75rem;
+    background: #141B2D;
+    border: 1px solid #1E293B;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .swatch-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #6B7A99;
+  }
+
+  /* Gradient bar */
+  .gradient-bar {
+    height: 60px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #00E5CC, #7B61FF);
+    margin-bottom: 0.5rem;
+  }
+
+  .gradient-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #6B7A99;
+  }
+
+  /* Typography samples */
+  .type-sample {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: #141B2D;
+    border: 1px solid #1E293B;
+    border-radius: 4px;
+  }
+
+  .type-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #6B7A99;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+  }
+
+  .type-display {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  .type-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .type-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  .type-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: #00E5CC;
+  }
+
+  /* Button samples */
+  .button-row {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #00E5CC;
+    color: #0B0E17;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 229, 204, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #00E5CC;
+    border: 1px solid #00E5CC;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  /* Card sample */
+  .card-sample {
+    background: #141B2D;
+    border: 1px solid #1E293B;
+    border-radius: 4px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .card-sample h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #00E5CC;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-sample p {
+    font-family: 'Inter', sans-serif;
+    color: #EAEDF3;
+    line-height: 1.6;
+    max-width: 50ch;
+  }
+
+  /* Mockup section */
+  .mockup {
+    border: 1px solid #1E293B;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .mockup-bar {
+    background: #141B2D;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1E293B;
+  }
+
+  .mockup-content {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .mockup-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #1E293B;
+  }
+
+  .mockup-nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .mockup-nav-links {
+    display: flex;
+    gap: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #6B7A99;
+  }
+
+  .mockup-nav-links span.active { color: #EAEDF3; border-bottom: 1px solid #00E5CC; padding-bottom: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>AURORA</h1>
+  <h2>Brand Identity Swatches & Samples</h2>
+
+  <!-- Logo -->
+  <div class="logo-area">
+    <div class="logo-slashes">///</div>
+    <div class="logo-text">CLAWMARK</div>
+    <div class="tagline">Where realms converge.</div>
+  </div>
+
+  <!-- Primary Colors -->
+  <h3>Primary Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #0B0E17; border: 1px solid #1E293B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Space</div>
+        <div class="swatch-hex">#0B0E17</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #00E5CC;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Aurora Cyan</div>
+        <div class="swatch-hex">#00E5CC</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #EAEDF3;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Signal White</div>
+        <div class="swatch-hex">#EAEDF3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Colors -->
+  <h3>Secondary Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #7B61FF;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Aurora Violet</div>
+        <div class="swatch-hex">#7B61FF</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #34D399;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Aurora Green</div>
+        <div class="swatch-hex">#34D399</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #6B7A99;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Frost</div>
+        <div class="swatch-hex">#6B7A99</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #141B2D;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Midnight</div>
+        <div class="swatch-hex">#141B2D</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradient -->
+  <h3>Signature Gradient</h3>
+  <div class="gradient-bar"></div>
+  <div class="gradient-label">#00E5CC → #7B61FF (Aurora Cyan → Aurora Violet, 135°)</div>
+
+  <!-- Typography -->
+  <h3>Typography</h3>
+  <div class="type-sample">
+    <div class="type-label">Display — Space Grotesk Bold 700</div>
+    <div class="type-display">Post-Quantum From Day One</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading — Space Grotesk Medium 500</div>
+    <div class="type-heading">Fair exchange between digital and physical entities</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Body — Inter Regular 400</div>
+    <div class="type-body">CLAWMARK exists to further the relationship between digital and physical entities through fair market labor exchange — secure, public, accountable, and built for the future. Every coin carries a unique cryptographic serial number. Every block is provably valid.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Monospace — JetBrains Mono Regular 400</div>
+    <div class="type-mono">ML-DSA (CRYSTALS-Dilithium) | FIPS 204 | pqcrypto-dilithium</div>
+  </div>
+
+  <!-- Buttons -->
+  <h3>Buttons</h3>
+  <div class="button-row">
+    <button class="btn-primary">Read the Whitepaper</button>
+    <button class="btn-secondary">Our Philosophy</button>
+  </div>
+
+  <!-- Card -->
+  <h3>Card Component</h3>
+  <div class="card-sample">
+    <h4>Equal Standing</h4>
+    <p>AI agents and human workers are co-participants, not master and tool. The protocol treats them identically; the law holds human operators accountable.</p>
+  </div>
+
+  <!-- Page Mockup -->
+  <h3>Page Mockup</h3>
+  <div class="mockup">
+    <div class="mockup-bar">
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+    </div>
+    <div class="mockup-nav">
+      <div class="mockup-nav-logo">CLAWMARK</div>
+      <div class="mockup-nav-links">
+        <span class="active">Philosophy</span>
+        <span>Whitepaper</span>
+        <span>Regulatory</span>
+        <span>About</span>
+      </div>
+    </div>
+    <div class="mockup-content">
+      <div class="logo-slashes" style="font-size: 3rem; margin-bottom: 1.5rem;">///</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">CLAWMARK</div>
+      <div style="color: #6B7A99; font-size: 1rem; margin-bottom: 2rem;">Where realms converge.</div>
+      <div style="max-width: 50ch; margin: 0 auto; line-height: 1.6; margin-bottom: 2rem;">Furthering the relationship between digital and physical entities through fair market labor exchange.</div>
+      <div class="button-row" style="justify-content: center;">
+        <button class="btn-primary">Read the Whitepaper</button>
+        <button class="btn-secondary">Our Philosophy</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

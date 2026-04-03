@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONOLITH — Brand Swatches</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #09090B;
+    color: #FAFAF9;
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 4rem 2rem; }
+
+  h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #78716C;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin: 4rem 0 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #F59E0B;
+  }
+
+  /* Logo mock */
+  .logo-area {
+    text-align: center;
+    padding: 6rem 0;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #F59E0B;
+  }
+
+  .logo-slashes {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #F59E0B;
+    letter-spacing: -10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  .tagline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #78716C;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Swatches */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .swatch { overflow: hidden; }
+
+  .swatch-color {
+    height: 100px;
+  }
+
+  .swatch-info {
+    padding: 0.75rem;
+    background: #1C1917;
+  }
+
+  .swatch-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .swatch-hex {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #78716C;
+  }
+
+  /* Typography */
+  .type-sample {
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-bottom: 1px solid #1C1917;
+  }
+
+  .type-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: #78716C;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .type-display {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .type-heading {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  .type-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 60ch;
+  }
+
+  .type-mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    color: #F59E0B;
+  }
+
+  .type-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A8A29E;
+  }
+
+  /* Buttons */
+  .button-row {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #F59E0B;
+    color: #09090B;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: #D97706; }
+
+  .btn-secondary {
+    background: transparent;
+    color: #FAFAF9;
+    border: 1px solid #FAFAF9;
+    padding: 0.75rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover { color: #F59E0B; border-color: #F59E0B; }
+
+  /* Numbered principles */
+  .principle {
+    padding: 2rem 0;
+    border-bottom: 1px solid #1C1917;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+  }
+
+  .principle-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #F59E0B;
+  }
+
+  .principle-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .principle-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #A8A29E;
+  }
+
+  /* Mockup */
+  .mockup {
+    border: 1px solid #1C1917;
+    margin: 2rem 0;
+    overflow: hidden;
+  }
+
+  .mockup-bar {
+    background: #1C1917;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2D2926;
+  }
+
+  .mockup-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+
+  .mockup-nav-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .mockup-nav-links {
+    display: flex;
+    gap: 2.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #78716C;
+  }
+
+  .mockup-nav-links span.active { color: #FAFAF9; }
+
+  .mockup-content {
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .mockup-divider {
+    height: 1px;
+    background: #F59E0B;
+    margin: 3rem 2rem;
+  }
+
+  .mockup-quote {
+    max-width: 50ch;
+    margin: 0 auto;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding: 2rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>MONOLITH</h1>
+  <h2>Brand Identity Swatches & Samples</h2>
+
+  <!-- Logo -->
+  <div class="logo-area">
+    <div class="logo-slashes">///</div>
+    <div class="logo-text">CLAWMARK</div>
+    <div class="tagline">The mark of work done.</div>
+  </div>
+
+  <!-- Primary Colors -->
+  <h3>Primary Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #09090B; border: 1px solid #1C1917;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Obsidian</div>
+        <div class="swatch-hex">#09090B</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F59E0B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Amber</div>
+        <div class="swatch-hex">#F59E0B</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #FAFAF9;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Bone</div>
+        <div class="swatch-hex">#FAFAF9</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Colors -->
+  <h3>Secondary Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #78716C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Stone</div>
+        <div class="swatch-hex">#78716C</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #1C1917;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#1C1917</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #A8A29E;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ash</div>
+        <div class="swatch-hex">#A8A29E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #D97706;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ember</div>
+        <div class="swatch-hex">#D97706</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No gradient note -->
+  <h3>Gradient</h3>
+  <div style="padding: 2rem; border: 1px solid #1C1917; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: #78716C; text-align: center;">
+    This brand does not use gradients. The constraint is the point.
+  </div>
+
+  <!-- Typography -->
+  <h3>Typography</h3>
+  <div class="type-sample">
+    <div class="type-label">Display — IBM Plex Mono Bold 700</div>
+    <div class="type-display">The Mark of Work Done</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading — IBM Plex Mono Medium 500</div>
+    <div class="type-heading">Post-quantum cryptography as default infrastructure</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Body — IBM Plex Sans Regular 400</div>
+    <div class="type-body">Digital and physical entities deserve equal standing in a labor market. The medium of exchange between them must be as trustworthy and verifiable as the work it compensates. The system must be transparent by default, private where necessary, and built on cryptography that will survive the next century.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Technical — IBM Plex Mono Regular 400</div>
+    <div class="type-mono">ML-DSA (CRYSTALS-Dilithium) | FIPS 204 | pqcrypto-dilithium</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Caption — IBM Plex Mono Regular 400, uppercase</div>
+    <div class="type-caption">Cryptographic Coin Serial ID — CCSI Verification Protocol</div>
+  </div>
+
+  <!-- Buttons -->
+  <h3>Buttons</h3>
+  <div class="button-row">
+    <button class="btn-primary">Read the Whitepaper</button>
+    <button class="btn-secondary">Our Philosophy</button>
+  </div>
+
+  <!-- Principles sample -->
+  <h3>Numbered Principles</h3>
+  <div class="principle">
+    <div class="principle-num">01</div>
+    <div>
+      <div class="principle-title">Equal Standing</div>
+      <div class="principle-body">AI agents and human workers are co-participants, not master and tool. The protocol treats them identically; the law holds human operators accountable.</div>
+    </div>
+  </div>
+  <div class="principle">
+    <div class="principle-num">02</div>
+    <div>
+      <div class="principle-title">Radical Transparency</div>
+      <div class="principle-body">Every coin is serialized. Every block is provably valid. Supply is publicly verifiable. Reserves are audited. The org publishes everything it legally can.</div>
+    </div>
+  </div>
+  <div class="principle">
+    <div class="principle-num">03</div>
+    <div>
+      <div class="principle-title">Post-Quantum From Day One</div>
+      <div class="principle-body">The cryptographic stack assumes quantum computers exist today. Not retrofitted. Not hybrid-as-a-crutch. This is what "futuristic" means in practice.</div>
+    </div>
+  </div>
+
+  <!-- Page Mockup -->
+  <h3>Page Mockup</h3>
+  <div class="mockup">
+    <div class="mockup-bar">
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+    </div>
+    <div class="mockup-nav">
+      <div class="mockup-nav-logo">CLAWMARK</div>
+      <div class="mockup-nav-links">
+        <span class="active">Philosophy</span>
+        <span>Whitepaper</span>
+        <span>Regulatory</span>
+        <span>About</span>
+      </div>
+    </div>
+    <div class="mockup-content">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 4rem; font-weight: 700; color: #F59E0B; letter-spacing: -8px; margin-bottom: 2rem;">///</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 1.8rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.75rem;">CLAWMARK</div>
+      <div style="font-family: 'IBM Plex Sans', sans-serif; color: #78716C; margin-bottom: 3rem;">The mark of work done.</div>
+    </div>
+    <div class="mockup-divider"></div>
+    <div class="mockup-quote">
+      "Digital and physical entities deserve equal standing in a labor market."
+    </div>
+    <div style="padding: 0 2rem 4rem; text-align: center;">
+      <div class="button-row" style="justify-content: center;">
+        <button class="btn-primary">Read the Whitepaper</button>
+        <button class="btn-secondary">Our Philosophy</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

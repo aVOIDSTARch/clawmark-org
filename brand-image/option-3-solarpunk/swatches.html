@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLARPUNK — Brand Swatches</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500&family=Source+Code+Pro:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0C1210;
+    color: #F5F0E8;
+    font-family: 'Source Sans 3', sans-serif;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 4rem 2rem; }
+
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #6B6358;
+  }
+
+  h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 3rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #22C55E;
+  }
+
+  /* Logo */
+  .logo-area {
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #22C55E;
+  }
+
+  .logo-slashes {
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #22C55E;
+    letter-spacing: -8px;
+    margin-bottom: 1rem;
+  }
+
+  .logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    color: #6B6358;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Swatches */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .swatch {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .swatch-color { height: 100px; }
+
+  .swatch-info {
+    padding: 0.75rem;
+    background: #1A3A2A;
+    border: 1px solid #2D4A3A;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .swatch-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .swatch-hex {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: #6B6358;
+  }
+
+  /* Gradient */
+  .gradient-bar {
+    height: 60px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #D4782F, #22C55E, #38BDF8);
+    margin-bottom: 0.5rem;
+  }
+
+  .gradient-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: #6B6358;
+  }
+
+  /* Dual realm demo */
+  .realm-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .realm-card {
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid;
+  }
+
+  .realm-card.physical {
+    background: rgba(212, 120, 47, 0.08);
+    border-color: rgba(212, 120, 47, 0.3);
+  }
+
+  .realm-card.digital {
+    background: rgba(56, 189, 248, 0.08);
+    border-color: rgba(56, 189, 248, 0.3);
+  }
+
+  .realm-label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .realm-card.physical .realm-label { color: #D4782F; }
+  .realm-card.digital .realm-label { color: #38BDF8; }
+
+  .realm-items {
+    list-style: none;
+    font-size: 0.95rem;
+    line-height: 2;
+    color: #F5F0E8;
+  }
+
+  .realm-bridge {
+    text-align: center;
+    padding: 1.5rem;
+    margin: 1rem 0 2rem;
+    background: #1A3A2A;
+    border: 1px solid #2D4A3A;
+    border-radius: 6px;
+  }
+
+  .realm-bridge-arrow {
+    color: #22C55E;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .realm-bridge-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Typography */
+  .type-sample {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: #1A3A2A;
+    border: 1px solid #2D4A3A;
+    border-radius: 6px;
+  }
+
+  .type-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.7rem;
+    color: #6B6358;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+  }
+
+  .type-display {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  .type-heading {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .type-body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 60ch;
+  }
+
+  .type-mono {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.875rem;
+    color: #22C55E;
+  }
+
+  /* Buttons */
+  .button-row {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #22C55E;
+    color: #0C1210;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+  }
+
+  .btn-primary:hover { background: #16A34A; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: #22C55E;
+    border: 1px solid #22C55E;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-copper {
+    background: #D4782F;
+    color: #0C1210;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-sky {
+    background: #38BDF8;
+    color: #0C1210;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Principle cards */
+  .principle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .principle-card {
+    background: #1A3A2A;
+    border: 1px solid #2D4A3A;
+    border-radius: 6px;
+    padding: 1.5rem;
+  }
+
+  .principle-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  .principle-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: inline;
+  }
+
+  .principle-body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #A8A29E;
+    margin-top: 0.5rem;
+  }
+
+  /* Mockup */
+  .mockup {
+    border: 1px solid #2D4A3A;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .mockup-bar {
+    background: #1A3A2A;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2D4A3A;
+  }
+
+  .mockup-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #2D4A3A;
+  }
+
+  .mockup-nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .mockup-nav-links {
+    display: flex;
+    gap: 2rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    color: #6B6358;
+  }
+
+  .mockup-nav-links span.active {
+    color: #F5F0E8;
+  }
+
+  .mockup-nav-links span.active::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22C55E;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .mockup-content {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .mockup-realms {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .mockup-realm-box {
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .mockup-realm-box.physical {
+    background: rgba(212, 120, 47, 0.1);
+    border: 1px solid rgba(212, 120, 47, 0.3);
+  }
+
+  .mockup-realm-box.digital {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .mockup-realm-label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .mockup-bridge-arrow {
+    color: #22C55E;
+    font-size: 2rem;
+    font-family: 'Outfit', sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>SOLARPUNK</h1>
+  <h2>Brand Identity Swatches & Samples</h2>
+
+  <!-- Logo -->
+  <div class="logo-area">
+    <div class="logo-slashes">///</div>
+    <div class="logo-text">CLAWMARK</div>
+    <div class="tagline">Fair exchange between all things.</div>
+  </div>
+
+  <!-- Primary Colors -->
+  <h3>Primary Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #0C1210; border: 1px solid #2D4A3A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Soil</div>
+        <div class="swatch-hex">#0C1210</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #22C55E;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Photon Green</div>
+        <div class="swatch-hex">#22C55E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F5F0E8;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Parchment</div>
+        <div class="swatch-hex">#F5F0E8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Colors -->
+  <h3>Secondary Palette — Dual Realm System</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #D4782F;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Copper (Physical)</div>
+        <div class="swatch-hex">#D4782F</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #38BDF8;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Sky (Digital)</div>
+        <div class="swatch-hex">#38BDF8</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #1A3A2A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Moss</div>
+        <div class="swatch-hex">#1A3A2A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #6B6358;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Bark</div>
+        <div class="swatch-hex">#6B6358</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradient -->
+  <h3>Bridge Gradient (Physical → Growth → Digital)</h3>
+  <div class="gradient-bar"></div>
+  <div class="gradient-label">Copper #D4782F → Photon Green #22C55E → Sky #38BDF8</div>
+
+  <!-- Dual Realm Demo -->
+  <h3>Dual-Realm Visual Language</h3>
+  <div class="realm-demo">
+    <div class="realm-card physical">
+      <div class="realm-label">Physical Realm</div>
+      <ul class="realm-items">
+        <li>Human workers</li>
+        <li>Craft & skill</li>
+        <li>Judgment</li>
+        <li>Physical presence</li>
+      </ul>
+    </div>
+    <div class="realm-card digital">
+      <div class="realm-label">Digital Realm</div>
+      <ul class="realm-items">
+        <li>AI agents</li>
+        <li>Compute power</li>
+        <li>Speed & scale</li>
+        <li>Always-on availability</li>
+      </ul>
+    </div>
+  </div>
+  <div class="realm-bridge">
+    <div class="realm-bridge-arrow">&#8595;</div>
+    <div class="realm-bridge-text">CLAWMARK — the trustworthy medium of exchange between both realms</div>
+  </div>
+
+  <!-- Typography -->
+  <h3>Typography</h3>
+  <div class="type-sample">
+    <div class="type-label">Display — Outfit Bold 700</div>
+    <div class="type-display">Fair Exchange Between All Things</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading — Outfit SemiBold 600</div>
+    <div class="type-heading">Digital and physical entities on equal footing</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Body — Source Sans 3 Regular 400</div>
+    <div class="type-body">CLAWMARK exists to further the relationship between digital and physical entities through fair market labor exchange — secure, public, accountable, and built for the future. Each has access to a realm the other has limited access to, and through this protocol they can exchange their particular talents across micro and macro tasks.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Monospace — Source Code Pro Regular 400</div>
+    <div class="type-mono">ML-DSA (CRYSTALS-Dilithium) | FIPS 204 | pqcrypto-dilithium</div>
+  </div>
+
+  <!-- Buttons -->
+  <h3>Buttons</h3>
+  <div class="button-row">
+    <button class="btn-primary">Read the Whitepaper</button>
+    <button class="btn-secondary">Our Philosophy</button>
+    <button class="btn-copper">Physical Realm</button>
+    <button class="btn-sky">Digital Realm</button>
+  </div>
+
+  <!-- Principle Cards -->
+  <h3>Principle Cards</h3>
+  <div class="principle-grid">
+    <div class="principle-card">
+      <span class="principle-dot"></span>
+      <span class="principle-title">Equal Standing</span>
+      <div class="principle-body">AI agents and human workers are co-participants, not master and tool.</div>
+    </div>
+    <div class="principle-card">
+      <span class="principle-dot"></span>
+      <span class="principle-title">Radical Transparency</span>
+      <div class="principle-body">Every coin is serialized. Every block is provably valid.</div>
+    </div>
+    <div class="principle-card">
+      <span class="principle-dot"></span>
+      <span class="principle-title">Post-Quantum</span>
+      <div class="principle-body">The stack assumes quantum computers exist today.</div>
+    </div>
+    <div class="principle-card">
+      <span class="principle-dot"></span>
+      <span class="principle-title">One Coin, One Dollar</span>
+      <div class="principle-body">No decimals, no dust, no ambiguity. A CLAWMARK is a dollar of work.</div>
+    </div>
+  </div>
+
+  <!-- Page Mockup -->
+  <h3>Page Mockup</h3>
+  <div class="mockup">
+    <div class="mockup-bar">
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+      <div class="mockup-dot"></div>
+    </div>
+    <div class="mockup-nav">
+      <div class="mockup-nav-logo">CLAWMARK</div>
+      <div class="mockup-nav-links">
+        <span class="active">Philosophy</span>
+        <span>Whitepaper</span>
+        <span>Regulatory</span>
+        <span>About</span>
+      </div>
+    </div>
+    <div class="mockup-content">
+      <div style="font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 700; color: #22C55E; letter-spacing: -6px; margin-bottom: 1.5rem;">///</div>
+      <div style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5rem;">CLAWMARK</div>
+      <div style="color: #6B6358; margin-bottom: 2rem;">Fair exchange between all things.</div>
+      <div style="max-width: 50ch; margin: 0 auto; line-height: 1.7; margin-bottom: 2rem; font-size: 1.05rem;">Furthering the relationship between digital and physical entities through fair market labor exchange.</div>
+      <div class="button-row" style="justify-content: center;">
+        <button class="btn-primary">Read the Whitepaper</button>
+        <button class="btn-secondary">Our Philosophy</button>
+      </div>
+    </div>
+    <div class="mockup-realms">
+      <div class="mockup-realm-box physical">
+        <div class="mockup-realm-label" style="color: #D4782F;">Physical</div>
+        <div style="font-size: 0.85rem; color: #A8A29E;">Human workers<br>Craft & judgment</div>
+      </div>
+      <div class="mockup-bridge-arrow">&#8596;</div>
+      <div class="mockup-realm-box digital">
+        <div class="mockup-realm-label" style="color: #38BDF8;">Digital</div>
+        <div style="font-size: 0.85rem; color: #A8A29E;">AI agents<br>Compute & scale</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
